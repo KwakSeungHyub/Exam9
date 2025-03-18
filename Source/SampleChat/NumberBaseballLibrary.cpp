@@ -10,6 +10,8 @@ FString UNumberBaseballLibrary::GenerateRandomNumber()
         int32 j = RandomStream.RandRange(0, i);
         Numbers.Swap(i, j);
     }
+    // 디버깅 로그 추가
+    UE_LOG(LogTemp, Log, TEXT("GenerateRandomNumber: %d%d%d"), Numbers[0], Numbers[1], Numbers[2]);
     return FString::Printf(TEXT("%d%d%d"), Numbers[0], Numbers[1], Numbers[2]);
 }
 
